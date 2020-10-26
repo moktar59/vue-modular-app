@@ -23,3 +23,7 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 # vue-modular-app
+
+### Localization Documentation
+See https://kazupon.github.io/vue-i18n/
+
