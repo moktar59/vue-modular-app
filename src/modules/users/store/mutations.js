@@ -1,5 +1,5 @@
 export const mutations = {
-  addUser(state, user) {
-    state.users.push(user);
+  addUser (state, user) {
+    state.users.push(user)
   }
-};
+}
