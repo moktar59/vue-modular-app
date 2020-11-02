@@ -1,8 +1,5 @@
 export default {
-  addUser({ commit }, text) {
-    commit("addUser", {
-      text,
-      done: false
-    });
+  addUser ({ commit }, payload) {
+    commit('addUser', payload)
   }
-};
+}

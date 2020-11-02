@@ -1,11 +1,9 @@
-import UserList from "../pages/List";
-
 const routes = [
   {
-    path: "/user/list",
-    name: "user.list",
-    component: UserList
+    path: '/user/list',
+    name: 'user.list',
+    component: () => import('../pages/List')
   }
-];
+]
 
-export default routes;
+export default routes
