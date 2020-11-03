@@ -1,6 +1,11 @@
 export default {
   en: {
+    fields: {
+      title: 'Name',
+      description: 'Description'
+    },
+    validation: null,
     title: 'Name',
-    description: 'Date of Birth'
+    description: 'Description'
   }
 }

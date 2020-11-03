@@ -17,29 +17,29 @@
       <router-link :to="{ name: 'blog.list' }">Blog List</router-link> |
       <router-link :to="{ name: 'blog.form' }">Blog Form</router-link> |
       <router-link :to="{ name: 'user.list' }">User List</router-link> |
-      <router-link :to="{ name: 'user.form' }">User Form</router-link> 
+      <router-link :to="{ name: 'user.form' }">User Form</router-link>
     </div>
     <router-view/>
   </div>
 </template>
 
 <script>
-import i18n from "./locale";
+import i18n from './locale'
 
 export default {
-  data() {
+  data () {
     return {
       languages: [
-        { flag: "us", language: "en", title: "English" },
-        { flag: "bn", language: "bn", title: "Bengali" },
-      ],
-    };
+        { flag: 'us', language: 'en', title: 'English' },
+        { flag: 'bn', language: 'bn', title: 'Bengali' }
+      ]
+    }
   },
   methods: {
-    changeLocale(locale) {
-      i18n.locale = locale;
-    },
-  },
+    changeLocale (locale) {
+      i18n.locale = locale
+    }
+  }
 }
 </script>
 

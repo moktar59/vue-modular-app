@@ -2,36 +2,15 @@ import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 import BlogLangs from '../modules/blogs/lang'
 import UserLangs from '../modules/users/lang'
+import enValidationMessages from 'vee-validate/dist/locale/en.json'
+import bnValidationMessages from 'vee-validate/dist/locale/bd.json'
 
 Vue.use(VueI18n)
-
-const defaultMessages = {
-  en: {
-    welcomeMsg: 'Chainels multi-language application in Vue',
-    guide:
-      'For a guide and recipes on how to configure / customize this project,',
-    checkout: 'check out the',
-    localization: 'Localization',
-    pluralization: 'Pluralization',
-    'number-localization': 'Number Localization',
-    car: 'car | cars', // Pluralization
-    apple: 'no apples | one apple | {count} apples'
-  },
-  bn: {
-    welcomeMsg: 'Aplicación multilingüe Chainels en Vue',
-    guide:
-      'Para una guía y recetas sobre cómo configurar / personalizar este proyecto,',
-    checkout: 'revisar la',
-    localization: 'Localización',
-    pluralization: 'Pluralización',
-    'number-localization': 'Localización de números',
-    car: 'coche | coches',
-    apple: 'sin manzanas | una manzana | {count} manzanas'
-  }
-}
-
-const enLangs = Object.assign(BlogLangs.en, UserLangs.en, defaultMessages.en)
-const bnLangs = Object.assign(BlogLangs.bn, UserLangs.bn, defaultMessages.bn)
+console.log('BlogLangs=', BlogLangs, 'UserLangs=', UserLangs)
+const enLangs = Object.assign(BlogLangs.en, UserLangs.en)
+const bnLangs = Object.assign(BlogLangs.bn, UserLangs.bn)
+enLangs.validation = enValidationMessages
+bnLangs.validation = bnValidationMessages
 const messages = { en: enLangs, bn: bnLangs }
 
 const dateTimeFormats = {
@@ -92,5 +71,7 @@ const i18n = new VueI18n({
   // mergedMessages
   messages // set locale messages
 })
+
+console.log('message=', messages)
 
 export default i18n
