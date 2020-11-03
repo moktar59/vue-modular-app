@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
-import BlogLangs from '../modules/blogs/lang'
 import UserLangs from '../modules/users/lang'
+import BlogLangs from '../modules/blogs/lang'
 import enValidationMessages from 'vee-validate/dist/locale/en.json'
 import bnValidationMessages from 'vee-validate/dist/locale/bd.json'
 
 Vue.use(VueI18n)
-console.log('BlogLangs=', BlogLangs, 'UserLangs=', UserLangs)
+console.log('BlogLangsf=', BlogLangs)
 const enLangs = Object.assign(BlogLangs.en, UserLangs.en)
 const bnLangs = Object.assign(BlogLangs.bn, UserLangs.bn)
 enLangs.validation = enValidationMessages
