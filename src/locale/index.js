@@ -1,18 +1,18 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
-import UserLangs from '../modules/users/lang'
-import BlogLangs from '../modules/blogs/lang'
-import enValidationMessages from 'vee-validate/dist/locale/en.json'
-import bnValidationMessages from 'vee-validate/dist/locale/bd.json'
+import { AllFieldsEn, AllGeneralsEn } from './en'
+import { AllFieldsBn, AllGeneralsBn } from './bn'
+import ValidationMessagesEn from 'vee-validate/dist/locale/en.json'
+import ValidationMessagesBn from 'vee-validate/dist/locale/bd.json'
 
 Vue.use(VueI18n)
-console.log('BlogLangsf=', BlogLangs)
-const enLangs = Object.assign(BlogLangs.en, UserLangs.en)
-const bnLangs = Object.assign(BlogLangs.bn, UserLangs.bn)
-enLangs.validation = enValidationMessages
-bnLangs.validation = bnValidationMessages
-const messages = { en: enLangs, bn: bnLangs }
 
+const messages = {
+  en: { ...AllGeneralsEn, fields: AllFieldsEn, validation: ValidationMessagesEn },
+  bn: { ...AllGeneralsBn, fields: AllFieldsBn, validation: ValidationMessagesBn }
+}
+
+console.log('messages = ', messages)
 const dateTimeFormats = {
   en: {
     short: {
@@ -71,7 +71,5 @@ const i18n = new VueI18n({
   // mergedMessages
   messages // set locale messages
 })
-
-console.log('message=', messages)
 
 export default i18n

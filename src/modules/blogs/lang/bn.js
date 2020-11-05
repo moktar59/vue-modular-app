@@ -1,10 +1,9 @@
 export default {
-  bn: {
-    fields: {
-      title: 'শিরোনাম',
-      description: 'বর্ণনা'
-    },
-    validation: null,
+  fields: {
+    title: 'শিরোনাম',
+    description: 'বর্ণনা'
+  },
+  general: {
     title: 'শিরোনাম',
     description: 'বর্ণনা'
   }
