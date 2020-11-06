@@ -1,18 +1,31 @@
 <template>
   <div>
-    <p class="page-head">Blog Form</p>
-    <div>
-      {{ $t('title')}}
-      <br/>
-      {{ $t('description') }}
-      <validation-observer ref="form">
-        <validation-provider name="title" rules="required|min:6" v-slot="{ errors }">
-          <input type="text" v-model="title" placeholder="Type title of the blog"/>
-          <span>{{ errors[0] }}</span>
-        </validation-provider>
-      </validation-observer>
-    </div>
-    <button @click="onChangeLocale">change message lang</button>
+    <ValidationObserver ref="form">
+      <h2>Integrating i18n with VeeValidate: vue-i18n</h2>
+      <ValidationProvider
+        name="email"
+        rules="required|email"
+        v-slot="{ errors }"
+      >
+        <input type="text" v-model="email" placeholder="type some email" />
+        <span>{{ errors[0] }}</span>
+      </ValidationProvider>
+
+      <ValidationProvider
+        name="password"
+        rules="required|min:6"
+        v-slot="{ errors }"
+      >
+        <input
+          type="password"
+          v-model="password"
+          placeholder="type something"
+        />
+        <span>{{ errors[0] }}</span>
+      </ValidationProvider>
+    </ValidationObserver>
+
+    <button @click="switchLoc">Switch Locale</button>
   </div>
 </template>
 
@@ -21,19 +34,24 @@ import { ValidationProvider, ValidationObserver, extend } from 'vee-validate'
 import { required, email, min } from 'vee-validate/dist/rules'
 
 export default {
-  data () {
-    return {
-      title: '',
-      description: ''
-    }
-  },
+  name: 'Example',
   components: {
-    ValidationProvider, ValidationObserver
+    ValidationProvider,
+    ValidationObserver
   },
+  data: () => ({
+    email: '',
+    password: ''
+  }),
   methods: {
-    onChangeLocale () {
-      this.$i18n.locale = 'bn'
-      console.log('localchanged')
+    async submit () {
+      console.log('email submitted!')
+    },
+    switchLoc () {
+      // switch the locale.
+      this.$i18n.locale = this.$i18n.locale === 'en' ? 'bn' : 'en'
+
+      // re-validate to re-generate messages.
       this.$refs.form.validate()
     }
   }
@@ -49,9 +67,13 @@ extend('email', email)
 extend('min', min)
 </script>
 
-<style scoped>
-.page-head {
-  font-size: 16px;
-  color: blue;
+<style>
+span {
+  display: block;
+  margin-top: 20px;
+}
+
+input + span {
+  margin-top: 3px;
 }
 </style>

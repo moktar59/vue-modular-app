@@ -1,7 +1,9 @@
 export default {
   fields: {
-    title: 'Name',
-    description: 'Description'
+    title: 'Title',
+    description: 'Description',
+    email: 'Email',
+    password: 'Password'
   },
   general: {
     validation: null,
