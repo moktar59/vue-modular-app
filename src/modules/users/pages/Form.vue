@@ -2,7 +2,6 @@
   <div>
     <p class="page-head">User Form</p>
     <p>
-      {{ $t('id') }} <input type="text" v-model="user.id"/>
       <br/>
       {{ $t('name') }} <input type="text" v-model="user.name" />
       <br/>

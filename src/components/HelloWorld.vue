@@ -1,6 +1,13 @@
 <template>
   <div class="hello">
     {{ msg }}
+
+    <h3>
+      If you have not yet created account,
+      <router-link :to="{ name: 'user_register' }">register here.</router-link>
+      <br/>OR <br/>
+      <router-link :to="{ name: 'user_login' }">login</router-link>
+    </h3>
   </div>
 </template>
 
