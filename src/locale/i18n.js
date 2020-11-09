@@ -10,8 +10,8 @@ import blogBn from '../modules/blogs/lang/bn'
 Vue.use(VueI18n)
 
 const messages = {
-  en: { ...blogEn.general, fields: blogEn.fields, validation: en },
-  bn: { ...blogBn.general, fields: blogBn.fields, validation: bn }
+  en: { ...blogEn.general, fields: blogEn.fields, validation: en.messages },
+  bn: { ...blogBn.general, fields: blogBn.fields, validation: bn.messages }
 }
 // const messages = {
 //   en: { ...AllGeneralsEn, fields: AllFieldsEn, validation: en },
