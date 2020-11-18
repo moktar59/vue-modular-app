@@ -1,13 +1,7 @@
 <template>
   <div id="app">
     <div>
-      <button
-        v-for="entry in languages"
-        :key="entry.title"
-        @click="changeLocale(entry.language)"
-      >
-        {{ entry.title }}
-      </button>
+      <Localization/>
     </div>
     <br />
 
@@ -17,7 +11,8 @@
       <router-link :to="{ name: 'blog.list' }">Blog List</router-link> |
       <router-link :to="{ name: 'blog.form' }">Blog Form</router-link> |
       <router-link :to="{ name: 'user.list' }">User List</router-link> |
-      <router-link :to="{ name: 'user.form' }">User Form</router-link>
+      <router-link :to="{ name: 'user_register' }">User Form</router-link>
+      <router-link :to="{ name: 'logout' }" v-if="isLoggedIn">| Logout</router-link>
     </div>
     <router-view/>
   </div>
@@ -25,8 +20,12 @@
 
 <script>
 import i18n from './locale'
+import Localization from './components/Localization'
 
 export default {
+  components: {
+    Localization
+  },
   data () {
     return {
       languages: [
@@ -35,8 +34,17 @@ export default {
       ]
     }
   },
+  computed: {
+    isLoggedIn () {
+      return this.$store.state.commonObj.accessToken
+    }
+  },
+  created () {
+    console.log('accessToken===', this.isLoggedIn)
+  },
   methods: {
     changeLocale (locale) {
+      console.log('changed locale', locale)
       i18n.locale = locale
     }
   }

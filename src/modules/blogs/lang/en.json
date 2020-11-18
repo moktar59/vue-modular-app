@@ -1,9 +1,7 @@
 {
   "fields": {
     "title": "Title",
-    "description": "Description",
-    "email": "Email",
-    "password": "Password"
+    "description": "Description"
   },
   "general": {
     "title": "Name",

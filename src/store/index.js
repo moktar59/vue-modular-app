@@ -7,11 +7,23 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    common: {}
+    commonObj: {
+      formRef: null
+    }
   },
   mutations: {
+    mutateCommonProperties (state, payload) {
+      if (!payload.formRef) {
+        payload.formRef = null
+      }
+
+      state.commonObj = Object.assign({}, state.commonObj, payload)
+    }
   },
   actions: {
+    changeCommonProperties ({ commit }, payload) {
+      commit('mutateCommonProperties', payload)
+    }
   },
   modules: {
     PostStore,

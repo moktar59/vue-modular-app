@@ -2,7 +2,7 @@ const routes = [
   {
     path: '/user/register',
     name: 'user_register',
-    component: () => import('../pages/Register')
+    component: () => import('../pages/RegisterBackendValidation')
   },
   {
     path: '/user/login',

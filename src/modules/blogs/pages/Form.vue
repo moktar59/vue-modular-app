@@ -52,8 +52,14 @@ export default {
       this.$i18n.locale = this.$i18n.locale === 'en' ? 'bn' : 'en'
 
       // re-validate to re-generate messages.
-      this.$refs.form.validate()
+      // this.$refs.form.validate()
+      console.log('formRef=', this.$refs.form)
+      this.$store.dispatch('changeCommonProperties', { formRef: this.$refs.form })
     }
+  },
+  mounted () {
+    console.log('mounted formRef=', this.$refs.form)
+    this.$store.dispatch('changeCommonProperties', { formRef: this.$refs.form })
   }
 }
 

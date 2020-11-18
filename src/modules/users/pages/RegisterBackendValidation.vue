@@ -2,8 +2,8 @@
   <div>
     <h1>Registration</h1>
     <div>
-      <ValidationObserver ref="form"  v-slot="{ handleSubmit, reset }">
-        <form @submit.prevent="handleSubmit(register)" @reset.prevent="reset" autocomplete="off">
+      <ValidationObserver ref="form"  v-slot="{ reset }">
+        <form @submit.prevent="register" @reset.prevent="reset" autocomplete="off">
           <ValidationProvider name="name" rules="required|min:3" v-slot="{ errors }">
           <p>{{ $t(`name`)}} <br/>
             <input type="text" name="name" v-model="user.name"/>

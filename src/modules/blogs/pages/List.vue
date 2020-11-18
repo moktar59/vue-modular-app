@@ -1,7 +1,6 @@
 <template>
   <div>
     <p class="page-head">Blog List</p>
-    {{ $t("guide") }}
     <div>
       {{ $t('title')}}
       <br/>

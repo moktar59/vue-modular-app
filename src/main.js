@@ -16,12 +16,3 @@ new Vue({
   i18n,
   render: h => h(App)
 }).$mount('#app')
-
-// configure({
-//   defaultMessage: (field, values) => {
-//     // override the field name.
-//     values._field_ = i18n.t(`fields.${field}`)
-
-//     return i18n.t(`validation.${values._rule_}`, values)
-//   }
-// })

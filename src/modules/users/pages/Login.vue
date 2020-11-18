@@ -36,8 +36,18 @@ export default {
   methods: {
     async login () {
       console.log('user=', this.user)
-      const accessToken = await RestApi.postData('/login', this.user)
-      console.log('accessToken=', accessToken)
+      const result = await RestApi.postData('/login', this.user)
+      console.log('accessToken=', result)
+      if (result.status_code === 200) {
+        localStorage.setItem('accessToken', result.token)
+        localStorage.setItem('userType', result.user.user_type)
+        this.$store.commit('mutateCommonProperties', { accessToken: result.token })
+        if (result.user.user_type !== 'ADMIN') {
+          this.$router.push('/blog/form')
+        } else {
+          this.$router.push('/user/list')
+        }
+      }
     }
   }
 }

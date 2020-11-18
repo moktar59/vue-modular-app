@@ -1,9 +1,7 @@
 {
   "fields": {
     "title": "শিরোনাম",
-    "description": "বর্ণনা",
-    "email": "ইমেইল",
-    "password": "পাসওয়ার্ড"
+    "description": "বর্ণনা"
   },
   "general": {
     "title": "শিরোনাম",
