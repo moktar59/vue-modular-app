@@ -5,7 +5,11 @@ export default {
     email: 'Email',
     dob: 'Date of Birth',
     password: 'password',
-    user_type: 'User Type'
+    user_type: 'User Type',
+    division: 'Division',
+    district: 'District',
+    upazila: 'Upazila',
+    address: 'Address'
   },
   general: {
     id: 'ID',
@@ -13,6 +17,10 @@ export default {
     email: 'email',
     dob: 'Date of Birth',
     password: 'password',
-    user_type: 'User Type'
+    user_type: 'User Type',
+    division: 'Division',
+    district: 'District',
+    upazila: 'Upazila',
+    address: 'Address'
   }
 }

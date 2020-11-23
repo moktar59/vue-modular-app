@@ -8,6 +8,11 @@ const routes = [
     path: '/user/login',
     name: 'user_login',
     component: () => import('../pages/Login')
+  },
+  {
+    path: '/user/address',
+    name: 'user_address',
+    component: () => import('../pages/AddressForm')
   }
 ]
 

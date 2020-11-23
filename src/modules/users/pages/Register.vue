@@ -68,15 +68,21 @@ export default {
     }
   },
   methods: {
-    async register () {
+    register () {
       console.log('user in register=', this.user)
-      const result = await RestApi.postData('/register', this.user)
-      console.log('result=', result)
+      // const result = await RestApi.postData('/register', this.user)
+      // console.log('result=', result)
 
-      if (result.status_code === 200) {
-        this.$router.push('/user/login')
-        this.resetForm()
-      }
+      // if (result.status_code === 200) {
+      //   this.$router.push('/user/login')
+      //   this.resetForm()
+      // }
+
+      // if (status_code === 400) {
+      //   this.$refs.form.setErrors({
+      //     email: ['This email is already taken']
+      //   });
+      // }
     },
     resetForm () {
       const that = this

@@ -11,7 +11,8 @@
       <router-link :to="{ name: 'blog.list' }">Blog List</router-link> |
       <router-link :to="{ name: 'blog.form' }">Blog Form</router-link> |
       <router-link :to="{ name: 'user.list' }">User List</router-link> |
-      <router-link :to="{ name: 'user_register' }">User Form</router-link>
+      <router-link :to="{ name: 'user_register' }">User Form</router-link> |
+      <router-link :to="{name: 'user_address' }"> User Address</router-link>
       <router-link :to="{ name: 'logout' }" v-if="isLoggedIn">| Logout</router-link>
     </div>
     <router-view/>

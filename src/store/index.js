@@ -8,7 +8,11 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     commonObj: {
-      formRef: null
+      formRef: null,
+      hasDropdownLoaded: false,
+      divisionList: [],
+      districtList: [],
+      upazilaList: []
     }
   },
   mutations: {
